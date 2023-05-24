@@ -1,0 +1,48 @@
+<p>owndatetimepicker works!</p>
+<!-- <mat-form-field>
+  <input
+    #datepickerInput
+    class="mat-datepicker-input"
+    matInput
+    [matDatepicker]="picker"
+    placeholder="Choose a date"
+  />
+  <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker> </mat-datepicker>
+</mat-form-field> -->
+
+<!-- / -->
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Date</mat-label>
+  <input
+    matInput
+    placeholder="{{ placeHolder }}"
+    [(ngModel)]="date"
+    (blur)="tryFormat(date)"
+  />
+  <button
+    class="button-calendar"
+    matSuffix
+    mat-icon-button
+    [matMenuTriggerFor]="appMenu"
+    (menuOpened)="onOpen()"
+  >
+    <mat-icon>calendar_today</mat-icon>
+  </button>
+</mat-form-field>
+<mat-menu #appMenu="matMenu" class="drop-calendar">
+  <div (click)="$event.stopPropagation()">
+    <mat-calendar
+      #calendar
+      (selectedChange)="date = format($event)"
+      [selected]="parse(date)"
+    >
+    </mat-calendar>
+    <input class="time" matInput type="time" (keyup)="onKey($event)" />
+  </div>
+</mat-menu>
+<pre
+  >{{ date }}{{ parse(date) }} {{ time }}
+</pre>

@@ -1,1 +1,29 @@
-<div>MAT OWN DATEPICKER</div>
+<h1>Someone else Library</h1>
+<!-- <form [formGroup]="form1">
+  <mat-form-field appearance="fill">
+    <mat-label>Custom calendar header</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker
+      #picker
+      [calendarHeaderComponent]="timeHeader"
+    ></mat-datepicker>
+  </mat-form-field>
+</form> -->
+<br />
+<h1>Component with Material Inputs</h1>
+<app-owndatetimepicker></app-owndatetimepicker>
+<br />
+<h1>Own Library</h1>
+<form [formGroup]="form1">
+  <mat-form-field appearance="fill">
+    <mat-label>Custom calendar header</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker
+      #picker
+      [calendarHeaderComponent]="testPicker"
+    ></mat-datepicker>
+  </mat-form-field>
+</form>
+<button (click)="addMovie()">click me</button>
